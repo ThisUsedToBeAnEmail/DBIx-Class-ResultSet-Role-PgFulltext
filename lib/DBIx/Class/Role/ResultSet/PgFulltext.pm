@@ -231,7 +231,7 @@ The default pgfulltext_search has no normalisation applied.
     log_unique_words - divides the rank by 1 + the logarithm of the number of unique words in document
     rank - divides the rank by itself + 1
 
-=head2 Dictionaires 
+=head2 Dictionaries 
 
 Dictionaries are used to eliminate words that should not be considered in a search (stop words), and to normalize 
 words so that different derived forms of the same word will match.
