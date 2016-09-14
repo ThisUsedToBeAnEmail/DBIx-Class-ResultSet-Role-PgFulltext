@@ -211,9 +211,7 @@ region of query words is assigned a higher rank than one with scattered query wo
 
 =head1 pgfulltext_search
 
-=head2 Ranking Search Results 
-
-=head3 Column Weights
+=head2 Column Weights
 
 TODO add mechanism to override column weights
 
@@ -222,18 +220,18 @@ currently they are set as the default
     {D-weight, C-weight, B-weight, A-weight}
     { D-0.1, C-0.2, B-0.4, A-1.0 }
 
-=head3 Supported Normalisation Options
+=head2 Normalisation Options
 
 The default pgfulltext_search has no normalisation applied.
 
-log_length - divides the rank by 1 + the logarithm of the document length,
-length - divides the rank by the document length,
-harmonic_distance - divides the rank by the mean harmonic distance between extents (this is implemented only by ts_rank_cd)
-unique_words - divides the rank by the number of unique words in document
-log_unique_words - divides the rank by 1 + the logarithm of the number of unique words in document
-rank - divides the rank by itself + 1
+    log_length - divides the rank by 1 + the logarithm of the document length,
+    length - divides the rank by the document length,
+    harmonic_distance - divides the rank by the mean harmonic distance between extents (this is implemented only by ts_rank_cd)
+    unique_words - divides the rank by the number of unique words in document
+    log_unique_words - divides the rank by 1 + the logarithm of the number of unique words in document
+    rank - divides the rank by itself + 1
 
-=head3 Dictionaires 
+=head2 Dictionaires 
 
 Dictionaries are used to eliminate words that should not be considered in a search (stop words), and to normalize 
 words so that different derived forms of the same word will match.
@@ -257,7 +255,7 @@ And then set the attribute
         default => 'english_ispell'
     );
 
-=head3 Highlighting Results
+=head2 Highlighting Results
 
 TODO
 
