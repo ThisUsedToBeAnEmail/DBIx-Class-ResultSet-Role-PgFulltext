@@ -138,7 +138,7 @@ Version 0.01
 
 =head1 SYNOPSIS
 
-specify which columns in your result class you would like to fulltext search.
+Specify which columns in your result class.
 
     package MyApp::Schema::Result::Test;
     
@@ -157,7 +157,7 @@ specify which columns in your result class you would like to fulltext search.
         { data_type => "text", pgfulltext => 'C' },
     );
 
-Inherit the role in the resultset
+Consume the role in the resultset
     
     package MyApp::Schema::ResultSet::Test;
 
@@ -210,6 +210,11 @@ Along with the lexemes it is often desirable to store positional information to 
 region of query words is assigned a higher rank than one with scattered query words.
 
 =head1 pgfulltext_search
+
+    $rs->pgfulltext_search( $query, { 
+        normalisation => { rank => 1, log_unique_words => 1 }, 
+        rows => 10 
+    });
 
 =head2 Column Weights
 
